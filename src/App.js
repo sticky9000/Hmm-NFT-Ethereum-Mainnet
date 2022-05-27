@@ -378,17 +378,7 @@ function App() {
                     </s.Container>
                     <s.SpacerSmall />
                     <s.Container ai={"center"} jc={"center"} fd={"row"}>
-                      <StyledButton
-                        disabled={claimingNft ? 1 : 0}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          claimNFTs();
-                          getData();
-                        }}
-                      >
-                        MINTING IS PAUSED
-<a href="https://twitter.com/HmmNFT/status/1530012974991040512">Learn more</a>
-                      </StyledButton>
+                      
                     </s.Container>
                   </>
                 )}
