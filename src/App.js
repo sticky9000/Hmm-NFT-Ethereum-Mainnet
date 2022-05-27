@@ -386,7 +386,9 @@ function App() {
                           getData();
                         }}
                       >
-                        {claimingNft ? "BUSY" : "BUY"}
+                        MINTING IS PAUSED
+                        //{claimingNft ? "BUSY" : "BUY"}
+<a href="https://twitter.com/HmmNFT/status/1530012974991040512">Learn more</a>
                       </StyledButton>
                     </s.Container>
                   </>
