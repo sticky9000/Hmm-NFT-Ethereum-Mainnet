@@ -14,9 +14,13 @@
 3. The App.Js file pulls in other directories to interact with the blockchain, like 
 
 > import { useDispatch, useSelector } from "react-redux";
+
 > import { connect } from "./redux/blockchain/blockchainActions";
+> 
 > import { fetchData } from "./redux/data/dataActions";
+> 
 > import * as s from "./styles/globalStyles";
+> 
 > import styled from "styled-components";
 
 4. You dont need to understand all of it, but just look for anything that looks amiss or like it might not work
