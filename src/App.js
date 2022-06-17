@@ -289,13 +289,13 @@ function App() {
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  Hmm NFT is a Free Mint Project, with a secret roadmap, created by Sus Devs and Sticky. 
+                  Hmm NFT is a Genesis Free Mint Project
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  Only pay for gas fees. 10 per wallet.
+                  Zero cost. Only pay for gas fees. 10 per wallet.
                 </s.TextDescription>
                 <s.SpacerSmall />
                 {blockchain.account === "" ||
@@ -307,7 +307,7 @@ function App() {
                         color: "var(--accent-text)",
                       }}
                     >
-                      Psst! Click Connect to see mint supply remaining.
+                      Please Connect to Ethereum Mainnet to see the mint supply remaining.
                     </s.TextDescription>
                     <s.SpacerSmall />
                     <StyledButton
@@ -416,7 +416,7 @@ function App() {
               color: "var(--primary-text)",
             }}
           >
-            Note: We set the gas limit to {CONFIG.GAS_LIMIT} for the contract to
+            Note: We set gas limits to {CONFIG.GAS_LIMIT} for the contract to
             successfully mint your NFT. Lower this at your own risk!
           </s.TextDescription>
         </s.Container>
