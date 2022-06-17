@@ -311,7 +311,7 @@ function App() {
                         color: "var(--accent-text)",
                       }}
                     >
-                      Connect to the {CONFIG.NETWORK.NAME} network
+                      Psst! Click Connect to see mint supply remaining.
                     </s.TextDescription>
                     <s.SpacerSmall />
                     <StyledButton
