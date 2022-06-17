@@ -308,7 +308,7 @@ function App() {
                         color: "var(--accent-text)",
                       }}
                     >
-                      Connect to the {CONFIG.NETWORK.NAME} network
+                      Connect to {CONFIG.NETWORK.NAME} Mainnet to see mint supply remaining
                     </s.TextDescription>
                     <s.SpacerSmall />
                     <StyledButton
@@ -378,7 +378,39 @@ function App() {
                     </s.Container>
                     <s.SpacerSmall />
                     <s.Container ai={"center"} jc={"center"} fd={"row"}>
-                      
+                      <StyledRoundButton
+                        style={{ lineHeight: 0.4 }}
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          decrementMintAmount();
+                        }}
+                      >
+                        -
+                      </StyledRoundButton>
+                      <s.SpacerMedium />
+                      <s.TextDescription
+                        style={{
+                          textAlign: "center",
+                          color: "var(--accent-text)",
+                        }}
+                      >
+                        {mintAmount}
+                      </s.TextDescription>
+                      <s.SpacerMedium />
+                      <StyledRoundButton
+                        disabled={claimingNft ? 1 : 0}
+                        onClick={(e) => {
+                          e.preventDefault();
+                          incrementMintAmount();
+                        }}
+                      >
+                        +
+                      </StyledRoundButton>
+                    </s.Container>
+                    <s.SpacerSmall />
+                        
+                    <s.Container ai={"center"} jc={"center"} fd={"row"}>
                     </s.Container>
                   </>
                 )}
@@ -408,7 +440,7 @@ function App() {
               color: "var(--primary-text)",
             }}
           >
-            Note: We have set the gas limit to {CONFIG.GAS_LIMIT} for the contract to
+            Note: We set the gas limit to {CONFIG.GAS_LIMIT} for the contract to
             successfully mint your NFT. Lower this at your own risk!
           </s.TextDescription>
         </s.Container>
