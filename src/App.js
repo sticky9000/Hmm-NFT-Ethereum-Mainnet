@@ -94,25 +94,25 @@ function App() {
   const blockchain = useSelector((state) => state.blockchain);
   const data = useSelector((state) => state.data);
   const [claimingNft, setClaimingNft] = useState(false);
-  const [feedback, setFeedback] = useState(`Click buy to mint your NFT.`);
+  const [feedback, setFeedback] = useState(`Click Mint Now to mint your NFT(s).`);
   const [mintAmount, setMintAmount] = useState(1);
   const [CONFIG, SET_CONFIG] = useState({
-    CONTRACT_ADDRESS: "",
-    SCAN_LINK: "",
+    CONTRACT_ADDRESS: "0xc85dbdade3f84e1aae85b0f7a9e11158fdb9615d",
+    SCAN_LINK: "https://etherscan.io/address/0xc85dbdade3f84e1aae85b0f7a9e11158fdb9615d",
     NETWORK: {
-      NAME: "",
-      SYMBOL: "",
-      ID: 0,
+      NAME: "Ethereum",
+      SYMBOL: "ETH",
+      ID: 1,
     },
-    NFT_NAME: "",
-    SYMBOL: "",
-    MAX_SUPPLY: 1,
+    NFT_NAME: "Hmm NFT",
+    SYMBOL: "HMMNFT",
+    MAX_SUPPLY: 3333,
     WEI_COST: 0,
     DISPLAY_COST: 0,
     GAS_LIMIT: 0,
-    MARKETPLACE: "",
-    MARKETPLACE_LINK: "",
-    SHOW_BACKGROUND: false,
+    MARKETPLACE: "Opensea",
+    MARKETPLACE_LINK: "https://opensea.io/collection/hmm-nft",
+    SHOW_BACKGROUND: true,
   });
 
   const claimNFTs = () => {
@@ -289,13 +289,13 @@ function App() {
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  Hmm NFT is a Free Mint Project. Only pay for Gas Fees. 10 per wallet.
+                  Hmm NFT is a Free Mint Project, with a secret roadmap, created by Sus Devs and Sticky. 
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  Excluding gas fees.
+                  Only pay for gas fees. 10 per wallet.
                 </s.TextDescription>
                 <s.SpacerSmall />
                 {blockchain.account === "" ||
@@ -385,7 +385,7 @@ function App() {
                           getData();
                         }}
                       >
-                        {claimingNft ? "BUSY" : "BUY"}
+                        {claimingNft ? "BUSY" : "MINT NOW"}
                       </StyledButton>
                     </s.Container>
                   </>
