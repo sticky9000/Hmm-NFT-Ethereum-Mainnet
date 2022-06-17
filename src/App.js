@@ -196,12 +196,15 @@ function App() {
         style={{ padding: 24, backgroundColor: "var(--primary)" }}
         image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
       >
-        <div>
-        <a target={"_blank"} href={CONFIG.SCAN_LINK}><img alt={"etherscan"} src={"/config/images/etherscan_logo.png"} width="36px" height="36px"/></a>
-        <a target={"_blank"} href="https://twitter.com/HmmNFT"><img alt={"twitter"} src={"/config/images/twitter_logo.png"} width="36px" height="36px"/></a>
-        <a target={"_blank"} href="https://twitter.com/HmmNFT"><img alt={"discord"} src={"/config/images/discord_logo.png"} width="36px" height="36px"/></a>
-        <a target={"_blank"} href={CONFIG.MARKETPLACE_LINK}><img alt={"opensea"} src={"/config/images/opensea_logo.png"} width="36px" height="36px"/></a>
-        </div>
+        <a target={"_blank"} href={CONFIG.SCAN_LINK}>
+        <StyledImg alt={"etherscan"} src={"/config/images/etherscan_logo.png"} /> 
+        </a> <a target={"_blank"} href="https://twitter.com/HmmNFT">
+        <StyledImg alt={"twitter"} src={"/config/images/twitter_logo.png"} />
+        </a> <a target={"_blank"} href="https://twitter.com/HmmNFT">
+        <StyledImg alt={"discord"} src={"/config/images/discord_logo.png"} />
+        </a> <a target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
+        <StyledImg alt={"opensea"} src={"/config/images/opensea_logo.png"} />
+        </a>
         
         <s.SpacerSmall />
         <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
@@ -247,7 +250,7 @@ function App() {
             >
               <StyledButton
                 onClick={(e) => {
-                  window.open("https://discord.gg/NubdcRjCMy", "_blank");
+                  window.open("https://discord.gg/XcX5fdTKr6", "_blank");
                 }}
                 style={{
                   margin: "5px",
@@ -308,7 +311,7 @@ function App() {
                         color: "var(--accent-text)",
                       }}
                     >
-                      Connect to {CONFIG.NETWORK.NAME} Mainnet to see mint supply remaining
+                      Connect to the {CONFIG.NETWORK.NAME} network
                     </s.TextDescription>
                     <s.SpacerSmall />
                     <StyledButton
@@ -378,39 +381,16 @@ function App() {
                     </s.Container>
                     <s.SpacerSmall />
                     <s.Container ai={"center"} jc={"center"} fd={"row"}>
-                      <StyledRoundButton
-                        style={{ lineHeight: 0.4 }}
+                      <StyledButton
                         disabled={claimingNft ? 1 : 0}
                         onClick={(e) => {
                           e.preventDefault();
-                          decrementMintAmount();
+                          claimNFTs();
+                          getData();
                         }}
                       >
-                        -
-                      </StyledRoundButton>
-                      <s.SpacerMedium />
-                      <s.TextDescription
-                        style={{
-                          textAlign: "center",
-                          color: "var(--accent-text)",
-                        }}
-                      >
-                        {mintAmount}
-                      </s.TextDescription>
-                      <s.SpacerMedium />
-                      <StyledRoundButton
-                        disabled={claimingNft ? 1 : 0}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          incrementMintAmount();
-                        }}
-                      >
-                        +
-                      </StyledRoundButton>
-                    </s.Container>
-                    <s.SpacerSmall />
-                        
-                    <s.Container ai={"center"} jc={"center"} fd={"row"}>
+                        {claimingNft ? "BUSY" : "BUY"}
+                      </StyledButton>
                     </s.Container>
                   </>
                 )}
