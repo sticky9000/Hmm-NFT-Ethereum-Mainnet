@@ -196,15 +196,12 @@ function App() {
         style={{ padding: 24, backgroundColor: "var(--primary)" }}
         image={CONFIG.SHOW_BACKGROUND ? "/config/images/bg.png" : null}
       >
-        <a target={"_blank"} href={CONFIG.SCAN_LINK}>
-        <StyledImg alt={"etherscan"} src={"/config/images/etherscan_logo.png"} /> 
-        </a> <a target={"_blank"} href="https://twitter.com/HmmNFT">
-        <StyledImg alt={"twitter"} src={"/config/images/twitter_logo.png"} />
-        </a> <a target={"_blank"} href="https://twitter.com/HmmNFT">
-        <StyledImg alt={"discord"} src={"/config/images/discord_logo.png"} />
-        </a> <a target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
-        <StyledImg alt={"opensea"} src={"/config/images/opensea_logo.png"} />
-        </a>
+        <div>
+        <a target={"_blank"} href={CONFIG.SCAN_LINK}><img alt={"etherscan"} src={"/config/images/etherscan_logo.png"} width="36px" height="36px"/></a>
+        <a target={"_blank"} href="https://twitter.com/HmmNFT"><img alt={"twitter"} src={"/config/images/twitter_logo.png"} width="36px" height="36px"/></a>
+        <a target={"_blank"} href="https://twitter.com/HmmNFT"><img alt={"discord"} src={"/config/images/discord_logo.png"} width="36px" height="36px"/></a>
+        <a target={"_blank"} href={CONFIG.MARKETPLACE_LINK}><img alt={"opensea"} src={"/config/images/opensea_logo.png"} width="36px" height="36px"/></a>
+        </div>
         
         <s.SpacerSmall />
         <ResponsiveWrapper flex={1} style={{ padding: 24 }} test>
@@ -292,8 +289,7 @@ function App() {
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
-                  {CONFIG.NETWORK.SYMBOL}.
+                  Hmm NFT is a Free Mint Project. Only pay for Gas Fees. 10 per wallet.
                 </s.TextTitle>
                 <s.SpacerXSmall />
                 <s.TextDescription
